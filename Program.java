@@ -1,14 +1,19 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Program {
     // {"name":Барсик, "hight": 20}
     public static void main(String[] args) {
-        String str = "Hello";
-        int number = 3;
-        Cat barsik = new Cat("Барсик", 20);        
-        GetJson o1 = new GetJson<>(number);
-        System.out.println(o1.getJson());
+        List<GetJson> li = new ArrayList<>();
+        li.add(new GetJson<String>("Hello"));
+        li.add(new GetJson<Integer>(3));
+        li.add(new GetJson<Cat>(new Cat("Барсик", 20)));          
+        
+
+        for (GetJson getJson : li) {
+            System.out.println(getJson.getJson());
+        }
 
         String str2 = "{\"name\":Барсик, \"hight\": 20}";
         GetJson o2 = new GetJson<>(str2);

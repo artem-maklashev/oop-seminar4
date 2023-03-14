@@ -17,6 +17,6 @@ public class Cat extends Object{
     @Override
     public String toString() {
         
-        return String.format("%s", this.getClass().getSimpleName());
+        return String.format("%s\n Кличка: %s,\n Высота: %d ", this.getClass().getSimpleName(), this.getName(), this.getHight());
     }
 }
